@@ -7,13 +7,13 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 // Define an async function to initialize a MongoDB client
 const initClient = async () => {
   // Retrieve the MongoDB connection string from the environment variables
-  const uri = process.env.MONGODB_CONNECTION ?? `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`;
-
+  const uri = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`;
+  console.log(uri);
   // Create a new MongoDB client instance with the given options
   const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverApi: ServerApiVersion.v1,
+    // serverApi: ServerApiVersion.v1,
   });
 
   try {

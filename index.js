@@ -13,7 +13,7 @@ import jwt from "jsonwebtoken";
 const app = express();
 
 // set the port for the server to listen on
-const port = 3003;
+const port = process.env.PORT || 5000;
 
 // register routes
 
